@@ -15,12 +15,23 @@
             color: white;
             font-family: Arial, sans-serif;
             text-align: center;
+            margin: 0; /* Remove default margin */
         }
         h1 {
             font-size: 36px;
         }
         .emoji {
             font-size: 50px;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 24px;
+            }
+            .emoji {
+                font-size: 40px;
+            }
         }
     </style>
 </head>
