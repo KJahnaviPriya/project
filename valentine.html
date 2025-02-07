@@ -13,6 +13,7 @@
             height: 100vh;
             background-color: #ffc5d3;
             font-family: Arial, sans-serif;
+            margin: 0; /* Remove default margin */
         }
         img {
             max-width: 80%;
@@ -20,12 +21,20 @@
         }
         h1 {
             margin: 20px;
+            text-align: center; /* Center align text */
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 24px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <h1>Yay! I knew you will say YESS!</h1>
+    <h1>Yay! I knew you would say YES!</h1>
     <img src="img.gif" alt="Valentine GIF">
     <p>Happy Valentine's Day! ❤️</p>
 
