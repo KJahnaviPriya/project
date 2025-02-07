@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #ffcccb;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        #yesButton, #noButton {
+            padding: 20px;
+            font-size: 20px;
+            margin: 10px;
+            transition: transform 0.2s;
+        }
+        #yesButton:hover, #noButton:hover {
+            cursor: pointer;
+        }
+        #message {
+            display: none;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Will you be my Valentine?</h1>
+    <button id="yesButton">Yes!</button>
+    <button id="noButton">No!</button>
+    <p id="message"></p>
+
+    <script>
+        let yesButton = document.getElementById('yesButton');
+        let noButton = document.getElementById('noButton');
+        let message = document.getElementById('message');
+        let scaleFactor = 1;
+
+        const noResponses = [
+            "Think once more!",
+            "Are you sure?",
+            "One last chance!",
+            "My handsome man, think once more!",
+            "Are you fr?",
+            "Okay, this is last last chance!",
+            "Haww, so rude!",
+            "I hate you!",
+            "Are you serious? 😢"
+        ];
+
+        let responseIndex = 0;
+
+        yesButton.addEventListener('mouseover', () => {
+            scaleFactor += 0.1;
+            yesButton.style.transform = `scale(${scaleFactor})`;
+        });
+
+        yesButton.addEventListener('click', () => {
+            window.location.href = 'valentine.html'; // Change to your GIF page
+        });
+
+        noButton.addEventListener('click', () => {
+            if (responseIndex < noResponses.length) {
+                message.style.display = 'block';
+                message.innerText = noResponses[responseIndex];
+                responseIndex++;
+                scaleFactor += 0.1; // Increase size of Yes button
+                yesButton.style.transform = `scale(${scaleFactor})`;
+            } else {
+                window.location.href = 'final.html'; // Redirect to final page
+            }
+        });
+    </script>
+
+</body>
+</html>
